@@ -37,7 +37,12 @@
                                 <label for="name">Company</label>
                                 <select class="form-control" id="exampleFormControlSelect1" name="company_id">
                                     @foreach($companies as $company)
-                                        <option value="{{$company->id}}" {{$company->id == $employee->company->id? 'selected':''}}>{{$company->name}}</option>
+                                        @if($employee->company()->exists())
+                                            <option value="{{$company->id}}" {{$company->id == $employee->company->id? 'selected':''}}>{{$company->name}}</option>
+                                        @else
+                                            <option hidden>Choose Company</option>
+                                            <option value="{{$company->id}}">{{$company->name}}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>

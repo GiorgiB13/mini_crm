@@ -33,7 +33,7 @@
                             <td>{{$employee->last_name}}</td>
                             <td>{{$employee->email}}</td>
                             <td>{{$employee->phone}}</td>
-                            <td>{{$employee->company->name}}</td>
+                            <td>{{$employee->company()->exists()? $employee->company->name : '' }}</td>
                             <td>
                                 @if($employee->getLogoThumbnail())
                                     <img src="{{ $employee->getLogoThumbnail() }}" alt="..." class="rounded-circle"

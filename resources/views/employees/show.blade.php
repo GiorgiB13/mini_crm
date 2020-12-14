@@ -18,17 +18,21 @@
                 <div class="card-footer">
                     <div class="container-fluid">
                         <div class="row">
+                            @if($employee->company()->exists())
                             <div class="col-md-9"><p>Company:</p></div>
                             <div class="col-md-9">
+
                                 <a href="{{$employee->company->path()}}">
                                     {{$employee->company->name}}
                                 </a>
+
                             </div>
                             <div class="col-md-3">
                                 <img src="{{ $employee->getCompanyLogoThumbnail() }}" alt="..."
                                      class="rounded-circle"
                                      style="width: 30px; height: 30px">
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>

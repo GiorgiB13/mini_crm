@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Employee;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Employee\StoreEmployee;
 use App\Http\Requests\Employee\UpdateEmployee;
 use App\Models\Company;
 use App\Models\Employee;
@@ -18,6 +19,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::paginate(10);
+//        dd($employees);
         return view('employees.index', compact('employees'));
     }
 
@@ -35,21 +37,22 @@ class EmployeeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreEmployee $request)
     {
         $employee = new Employee($request->all());
         $employee->save();
         $employee->addMedia($request['logo'])->toMediaCollection('logo');
-        return redirect()->back();
+        return redirect()->back()
+            ->with('success', 'Employee Has Been Saved Successfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show(Employee $employee)
@@ -60,7 +63,7 @@ class EmployeeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Employee $employee)
@@ -72,29 +75,33 @@ class EmployeeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateEmployee $request, Employee $employee)
     {
-        if ($request['logo']){
+        if ($request['logo']) {
             $employee->clearMediaCollection('logo');
             $employee->addMedia($request['logo'])->toMediaCollection('logo');
         }
         $employee->update($request->all());
+        return redirect()->back()
+            ->with('success', 'Employee Has Been Updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Employee $employee)
     {
         $employee->clearMediaCollection('logo');
         $employee->delete();
-        return redirect()->route('employees.index');
+        return redirect()->route('employees.index')
+            ->with('success', 'Employee Has Been Updated Successfully');
+
     }
 }

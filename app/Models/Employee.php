@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Spatie\MediaLibrary\File;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
@@ -67,5 +68,9 @@ class Employee extends Model implements HasMedia
         else{
             return false;
         }
+    }
+
+    public function path(){
+        return url("admin/employees/{$this->id}-".Str::slug($this->first_name));
     }
 }

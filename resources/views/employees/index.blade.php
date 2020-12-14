@@ -4,7 +4,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="card-body">
-                <div class="card-header">Create</div>
+                <div>
+                    <a href="{{route('employees.create')}}" type="button" class="btn btn-primary">Create</a>
+                </div>
+                <div class="card-header">Employees</div>
+                @if(!$employees->isEmpty())
                 <table class="table table-bordered">
                     <thead>
                     <tr>
@@ -15,6 +19,7 @@
                         <th scope="col">Phone</th>
                         <th scope="col">Company</th>
                         <th scope="col">Logo</th>
+                        <th scope="col">View</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
                     </tr>
@@ -36,11 +41,15 @@
                                 @endif
                             </td>
                             <td>
-                                <a type="button" href="{{route('companies.edit', $employee->id)}}"
+                                <a type="button" href="{{$employee->path()}}"
+                                   class="btn btn-info"><i class="fa fa-eye"></i></a>
+                            </td>
+                            <td>
+                                <a type="button" href="{{route('employees.edit', $employee->id)}}"
                                    class="btn btn-warning"><i class="fa fa-edit"></i></a>
                             </td>
                             <td>
-                                <form method="post" action="{{route('companies.destroy', $employee->id)}}">
+                                <form method="post" action="{{route('employees.destroy', $employee->id)}}">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i>
@@ -57,6 +66,11 @@
                 <div class="d-flex justify-content-center">
                     {!! $employees->links() !!}
                 </div>
+                @else
+                    <div class="d-flex justify-content-center">
+                        No Records Found!
+                    </div>
+                @endif
             </div>
         </div>
     </div>

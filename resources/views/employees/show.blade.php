@@ -20,7 +20,7 @@
                         <div class="row">
                             <div class="col-md-9"><p>Company:</p></div>
                             <div class="col-md-9">
-                                <a href="{{route('companies.show', $employee->company->id)}}">
+                                <a href="{{$employee->company->path()}}">
                                     {{$employee->company->name}}
                                 </a>
                             </div>

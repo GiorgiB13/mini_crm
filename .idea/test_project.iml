@@ -130,5 +130,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="octagon" />
+    <orderEntry type="module" module-name="cms" />
   </component>
 </module>

@@ -37,7 +37,7 @@
                                 <label for="name">Company</label>
                                 <select class="form-control" id="exampleFormControlSelect1" name="company_id">
                                     @foreach($companies as $company)
-                                        <option value="{{$company->id}}">{{$company->name}}</option>
+                                        <option value="{{$company->id}}" {{$company->id == $employee->company->id? 'selected':''}}>{{$company->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -66,8 +66,8 @@
                             <div class="form-group {{ $errors->has('logo') ? 'has-error' : '' }}">
                                 <label for="name">Logo</label>
                                 <figure>
-                                    <img src="{{ $employee->getMedia('logo')->first()->getUrl('thumbnail') }}" alt=""
-                                         style="width: 400px">
+                                    <img src="{{ $employee->getLogo() }}" alt=""
+                                         style="width: 400px; height: 400px">
                                 </figure>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input @error('logo') is-invalid @enderror"
@@ -81,7 +81,7 @@
                                 @enderror
                             </div>
                             <div>
-                                <input class="btn btn-primary" type="submit" value="Store">
+                                <input class="btn btn-primary" type="submit" value="Update">
                             </div>
                         </form>
                     </div>

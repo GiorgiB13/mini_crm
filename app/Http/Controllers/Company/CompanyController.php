@@ -22,9 +22,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-
-//        $companies = Company::all();
-        $companies = Company::paginate(10);
+        $companies = Company::with('employees')->paginate(10);
         return view('companies.index', compact('companies'));
     }
 
@@ -41,7 +39,7 @@ class CompanyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return Response
      */
     public function store(StoreCompany $request)
@@ -49,19 +47,20 @@ class CompanyController extends Controller
         $company = new Company($request->all());
         $company->save();
         $company->addMedia($request['logo'])->toMediaCollection('logo');
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Company Has Been Saved Successfully');
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function show(Company $company)
     {
-        return view('companies.show', compact('company'));
+        $employees = $company->employees()->paginate(10);
+        return view('companies.show', compact('company', 'employees'));
     }
 
     /**
@@ -79,13 +78,13 @@ class CompanyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return Response
      */
     public function update(UpdateCompany $request, Company $company)
     {
-        if ($request['logo']){
+        if ($request['logo']) {
             $company->clearMediaCollection('logo');
             $company->addMedia($request['logo'])->toMediaCollection('logo');
         }
@@ -93,18 +92,21 @@ class CompanyController extends Controller
             'name' => $request->get('name'),
             'email' => $request->get('email')
         ]);
+        return redirect()->back()->with('success', 'Company Has Been Updated Successfully');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return Response
      */
     public function destroy(Company $company)
     {
         $company->clearMediaCollection('logo');
         $company->delete();
-        return redirect()->route('companies.index');
+        return redirect()->route('companies.index')
+            ->with('success', 'Company Has Been Deleted Successfully');
     }
 }

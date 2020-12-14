@@ -19,7 +19,30 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69a1aab1-cac2-48c4-afa4-438658159718" name="Default Changelist" comment="" />
+    <list default="true" id="69a1aab1-cac2-48c4-afa4-438658159718" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/test_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Company/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Company/CompanyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Employee/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Employee/EmployeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_11_180703_create_companies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_11_180703_create_companies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/company_logos/cJois7hM7l4ixcJthD8nvr2WU47GabBAtpdRmkH5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/companies/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/companies/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/companies/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/companies/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/companies/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/companies/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employees/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employees/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employees/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employees/test.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +53,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../octagon" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -164,7 +187,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/employees" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
   </component>
@@ -174,6 +197,7 @@
       <recent name="D:\xampp\htdocs\test_project\public\css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\test_project\resources\views" />
       <recent name="D:\xampp\htdocs\test_project\resources\views\employees" />
       <recent name="D:\xampp\htdocs\test_project\public" />
     </key>
@@ -195,7 +219,9 @@
       <workItem from="1607709819557" duration="8257000" />
       <workItem from="1607783555981" duration="600000" />
       <workItem from="1607792931978" duration="9945000" />
-      <workItem from="1607860079066" duration="30831000" />
+      <workItem from="1607860079066" duration="30949000" />
+      <workItem from="1607942625304" duration="12004000" />
+      <workItem from="1607964987693" duration="1994000" />
     </task>
     <servers />
   </component>
@@ -218,10 +244,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607711261940">
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607951139238">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1607711261940" />
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1607951139238" />
     <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser" timestamp="1607864067871">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -230,18 +256,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1607710948414" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607887946876">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607952321299">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1607887946876" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1607802387577">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1607952321299" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1607953051088">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607802387577" />
-    <state x="477" y="87" key="NewPhpClassDialog" timestamp="1607864693075">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607953051088" />
+    <state x="477" y="87" key="NewPhpClassDialog" timestamp="1607952209149">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="477" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1607864693075" />
+    <state x="477" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1607952209149" />
     <state x="582" y="254" width="316" height="243" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1607865084528">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

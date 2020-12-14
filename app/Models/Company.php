@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Spatie\MediaLibrary\File;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
@@ -19,9 +20,8 @@ class Company extends Model implements HasMedia
         'image'
     ];
 
-    public function deleteLogo()
-    {
-        File::delete(public_path() . '/images/company_logos/' . $this->logo);
+    public function employees(){
+        return $this->hasMany(Employee::class);
     }
 
     public function registerMediaCollections()
@@ -57,6 +57,10 @@ class Company extends Model implements HasMedia
         else{
             return false;
         }
+    }
+
+    public function path(){
+        return url("admin/companies/{$this->id}-".Str::slug($this->name));
     }
 
 }

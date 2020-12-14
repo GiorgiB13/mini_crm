@@ -34,10 +34,9 @@
                                 @enderror
                             </div>
                             <div class="form-group {{ $errors->has('logo') ? 'has-error' : '' }}">
-                                {{$company->getMedia('thumbnail')->first()}}
                                 <figure>
-                                    <img src="{{ $company->getMedia('logo')->first()->getUrl('thumbnail') }}" alt=""
-                                         style="width: 400px">
+                                    <img src="{{ $company->getLogo() }}" alt=""
+                                         style="width: 400px; height: 400px">
                                 </figure>
                                 <label for="exampleFormControlFile1">Offer Image</label>
                                 <label for="name">Logo</label>
@@ -53,7 +52,7 @@
                                 @enderror
                             </div>
                             <div>
-                                <input class="btn btn-primary" type="submit" value="Store">
+                                <input class="btn btn-primary" type="submit" value="Update">
                             </div>
                         </form>
                     </div>
